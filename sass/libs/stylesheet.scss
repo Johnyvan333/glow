@@ -1,0 +1,47 @@
+.sprite {
+    background-image: url(../img/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-colors {
+    width: 42px;
+    height: 47px;
+    background-position: -5px -5px;
+}
+
+.sprite-icon-editable {
+    width: 48px;
+    height: 48px;
+    background-position: -57px -5px;
+}
+
+.sprite-icon-flat {
+    width: 48px;
+    height: 42px;
+    background-position: -115px -5px;
+}
+
+.sprite-icon-friendly {
+    width: 48px;
+    height: 48px;
+    background-position: -115px -57px;
+}
+
+.sprite-icon-marketable {
+    width: 46px;
+    height: 46px;
+    background-position: -5px -115px;
+}
+
+.sprite-icon-photos {
+    width: 48px;
+    height: 48px;
+    background-position: -61px -115px;
+}
+
+.sprite-logo {
+    width: 144px;
+    height: 78px;
+    background-position: -173px -5px;
+}

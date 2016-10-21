@@ -28,6 +28,7 @@
     "gulp-postcss": "6.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "2.3.2",
+    "gulp-sprite-generator": "^0.2.3",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.0.0",
     "gulp-watch": "^4.3.10",

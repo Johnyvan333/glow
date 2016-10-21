@@ -1,12 +1,242 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/style.min.css">
-  <title>Document</title>
+  <title>glow</title>
 </head>
+
 <body>
 
+  <!-- svg-спрайт -->
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <defs>
+      <clippath>
+        <path d="M718 931v-26h26v26zm5-13a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" fill="#fff" />
+      </clippath>
+      <clippath>
+        <path d="M858 840v-32h32v32zm8-16a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" fill="#fff" />
+      </clippath>
+    </defs>
+    <symbol id="icon-android" viewbox="0 0 23 25">
+      <title>icon</title>
+      <path d="M4.453 9.501h13.869v8.476a2.31 2.31 0 0 1-2.311 2.311h-.771v3.082c0 .847-.693 1.541-1.541 1.541a1.546 1.546 0 0 1-1.541-1.541v-3.082h-1.541v3.082c0 .847-.693 1.541-1.541 1.541a1.546 1.546 0 0 1-1.541-1.541v-3.082h-.77a2.312 2.312 0 0 1-2.312-2.311zM18.279 7.96H4.496a6.938 6.938 0 0 1 4.036-5.55L7.557.536a.193.193 0 0 1 .081-.26.194.194 0 0 1 .261.083l.99 1.901a6.93 6.93 0 0 1 2.499-.464 6.93 6.93 0 0 1 2.499.464l.99-1.901a.193.193 0 0 1 .26-.083.193.193 0 0 1 .081.26l-.975 1.874a6.936 6.936 0 0 1 4.036 5.55zm3.896 1.541v6.164c0 .847-.693 1.541-1.541 1.541a1.546 1.546 0 0 1-1.541-1.541V9.501c0-.848.693-1.541 1.541-1.541s1.541.693 1.541 1.541zm-18.492 0v6.164c0 .847-.693 1.541-1.541 1.541a1.546 1.546 0 0 1-1.541-1.541V9.501c0-.848.693-1.541 1.541-1.541s1.541.693 1.541 1.541zm5.74-3.853a1.117 1.117 0 1 0-2.234 0 1.117 1.117 0 0 0 2.234 0zm6.164 0a1.117 1.117 0 1 0-2.234 0 1.117 1.117 0 0 0 2.234 0z"
+          fill="#f4f4f4" />
+    </symbol>
+    <symbol id="icon-apple" viewbox="0 0 21 26">
+      <title>icon</title>
+      <path d="M16.771 13.815c-.031-3.123 2.547-4.621 2.663-4.695-1.45-2.12-3.706-2.41-4.509-2.443-1.921-.195-3.747 1.13-4.721 1.13-.972 0-2.476-1.102-4.069-1.072-2.092.03-4.022 1.216-5.1 3.091-2.174 3.773-.557 9.363 1.562 12.422 1.036 1.498 2.271 3.181 3.893 3.12 1.56-.061 2.151-1.009 4.039-1.009 1.887 0 2.418 1.009 4.07.979 1.68-.031 2.745-1.527 3.773-3.03 1.189-1.737 1.679-3.42 1.709-3.506-.038-.017-3.277-1.258-3.31-4.987zm-6.762-7.419c-.187-1.416.511-2.892 1.309-3.815C12.207 1.538 13.71.763 14.95.714c.158 1.444-.423 2.893-1.283 3.936-.862 1.042-2.274 1.854-3.658 1.746z"
+          fill="#f4f4f4" />
+    </symbol>
+    <symbol id="icon-dot-white" viewbox="0 0 26 26">
+      <title>dot</title>
+      <path d="M13 5a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="#f4f4f4" />
+      <path d="M731 910a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="none" stroke-dasharray="0" stroke-linejoin="round" stroke-linecap="round" stroke-opacity=".15" stroke="#fff" stroke-miterlimit="50" stroke-width="10" clip-path="url(&quot;#a&quot;)" transform="translate(-718 -905)"
+      />
+    </symbol>
+    <symbol id="icon-dot" viewbox="0 0 32 32">
+      <title>dot</title>
+      <path d="M16 8a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="#e74c3c" />
+      <path d="M874 816a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="none" stroke-dasharray="0" stroke-linejoin="round" stroke-linecap="round" stroke-opacity=".5" stroke="#fff" stroke-miterlimit="50" stroke-width="16" clip-path="url(&quot;#a&quot;)" transform="translate(-858 -808)"
+      />
+    </symbol>
+    <symbol id="icon-fb" viewbox="0 0 9 18">
+      <title>icon</title>
+      <path d="M6 17l-4.002.01L2 10H0V6h2l.071-1.4C2.071 2.38 3.319 0 6 0h3v4H7c-1.044 0-1 .29-1 1v1h3l-1 4H6z" fill="#fff" />
+    </symbol>
+    <symbol id="icon-in" viewbox="0 0 16 16">
+      <title>icon</title>
+      <path d="M11.428 16v-5.66c0-1.37-.553-2.16-1.42-2.16-.754 0-1.465.38-1.839.98-.121.2-.204.64-.204.94v5.87L5 16V5l2.595.18.149 1.88h.064c.423-.76 1.466-1.71 3.209-1.71 2.122 0 3.99 1.44 3.99 4.57v6.05zM0 5h3v11l-3-.03zm3.454-2.36C3.432 1.71 2.795.99 1.756.99.715.99.034 1.71.034 2.64c0 .92.66 1.66 1.677 1.66 1.084 0 1.743-.74 1.743-1.66z"
+          fill="#fff" />
+    </symbol>
+    <symbol id="icon-p" viewbox="0 0 20 20">
+      <title>icon</title>
+      <path d="M20 10c0 1.81-.447 3.49-1.341 5.02a10.017 10.017 0 0 1-3.639 3.64A9.823 9.823 0 0 1 10 20c-.963 0-1.91-.14-2.838-.42.512-.8.85-1.52 1.015-2.13.078-.3.313-1.21.703-2.75.174.34.491.63.951.88.46.25.955.37 1.484.37 1.05 0 1.988-.3 2.813-.89.824-.6 1.462-1.41 1.914-2.46.451-1.04.677-2.21.677-3.51 0-.99-.258-1.92-.775-2.79-.516-.87-1.265-1.57-2.246-2.12-.981-.55-2.088-.82-3.32-.82a8.41 8.41 0 0 0-2.552.38c-.79.25-1.461.58-2.012 1a6.96 6.96 0 0 0-1.419 1.44c-.395.54-.686 1.1-.873 1.69-.186.58-.28 1.16-.28 1.74 0 .9.174 1.7.521 2.38.347.69.855 1.17 1.524 1.45.26.1.425.01.494-.26.018-.06.053-.2.104-.41.053-.21.087-.33.105-.39.052-.2.004-.38-.144-.56-.442-.53-.664-1.18-.664-1.96 0-1.31.454-2.44 1.361-3.38s2.094-1.42 3.561-1.42c1.311 0 2.333.36 3.067 1.07.733.71 1.1 1.64 1.1 2.78 0 1.47-.298 2.73-.892 3.76-.595 1.03-1.356 1.55-2.285 1.55-.53 0-.955-.19-1.276-.57-.321-.37-.421-.83-.3-1.36.07-.3.185-.71.345-1.22.161-.5.291-.95.391-1.34.1-.38.15-.71.15-.98 0-.43-.117-.79-.352-1.08-.234-.29-.568-.43-1.003-.43-.538 0-.993.25-1.367.74-.373.5-.559 1.11-.559 1.85 0 .63.108 1.16.325 1.59l-1.289 5.44c-.148.61-.204 1.38-.169 2.31-1.789-.79-3.234-2.01-4.336-3.66C.551 13.86 0 12.02 0 10c0-1.81.447-3.49 1.341-5.02a10.02 10.02 0 0 1 3.64-3.64A9.817 9.817 0 0 1 10 0c1.814 0 3.488.45 5.02 1.34 1.532.9 2.745 2.11 3.639 3.64C19.553 6.51 20 8.19 20 10z"
+          fill="#fff" />
+    </symbol>
+    <symbol id="icon-twitter" viewbox="0 0 49.652 49.652">
+      <path d="M24.826 0C11.137 0 0 11.137 0 24.826c0 13.688 11.137 24.826 24.826 24.826 13.688 0 24.826-11.138 24.826-24.826C49.652 11.137 38.516 0 24.826 0zm11.075 19.144c.011.246.017.494.017.742 0 7.551-5.746 16.255-16.259 16.255-3.227 0-6.231-.943-8.759-2.565.447.053.902.08 1.363.08 2.678 0 5.141-.914 7.097-2.446a5.72 5.72 0 0 1-5.338-3.969 5.76 5.76 0 0 0 2.58-.096 5.715 5.715 0 0 1-4.583-5.603l.001-.072a5.69 5.69 0 0 0 2.587.714 5.71 5.71 0 0 1-2.541-4.755c0-1.048.281-2.03.773-2.874a16.225 16.225 0 0 0 11.777 5.972 5.707 5.707 0 0 1-.147-1.303 5.714 5.714 0 0 1 9.884-3.91 11.406 11.406 0 0 0 3.63-1.387 5.74 5.74 0 0 1-2.516 3.162 11.36 11.36 0 0 0 3.282-.899 11.494 11.494 0 0 1-2.848 2.954z"
+          fill="#c5c5c5" />
+    </symbol>
+    <symbol id="icon-windows" viewbox="0 0 26 25">
+      <title>icon</title>
+      <path d="M25.209 13.405l-.003 11.506-13.147-1.85v-9.656zM12.059 2.167L25.206.255v11.506H12.059zM.562 11.761L.553 3.746l9.862-1.34v9.355zm9.853 1.644H.561v8.096l9.854 1.351z" fill="#f4f4f4" />
+    </symbol>
+    <symbol id="icon-youtube" viewbox="0 0 20 22">
+      <title>icon</title>
+      <path d="M18.693 11.36c-.22-.96-1.004-1.68-1.947-1.78-2.233-.25-4.493-.25-6.743-.25-2.251 0-4.511 0-6.744.25-.943.1-1.726.82-1.946 1.78-.314 1.38-.318 2.88-.318 4.3s0 2.92.314 4.3c.22.97 1.003 1.68 1.946 1.79 2.233.25 4.493.25 6.744.25 2.25 0 4.51 0 6.744-.25.942-.11 1.726-.82 1.946-1.79.314-1.38.316-2.88.316-4.3s.001-2.92-.312-4.3zM3.944.13h-.047c.257.77.525 1.53.782 2.3.391 1.14.635 2.01.745 2.6v3.33h1.22v-.14h.003v-3.2L8.112.13h-.037L8.114 0H6.881l-.832 3.23L5.184 0H3.9l.044.13zM6.132 12.6H4.829v7H3.618v-7h-1.28v-1.14h3.794zm7.423 5.18c0 .56-.037.96-.11 1.22-.145.45-.436.68-.87.68-.387 0-.761-.22-1.124-.67v.59h-1.089v-8.14h1.089v2.66c.351-.44.724-.66 1.124-.66.434 0 .725.23.87.68.073.25.11.65.11 1.22zM8.124 4.079l-.002.151v2.14c0 .66.11 1.14.344 1.45.304.41.731.62 1.279.62.552 0 .98-.21 1.284-.62.22-.295.33-.743.34-1.353a5.17 5.17 0 0 0 .005-.227V4.09c0-.65-.111-1.13-.341-1.44-.305-.42-.732-.63-1.284-.63-.547 0-.976.21-1.28.63-.233.308-.344.785-.345 1.429zm9.538 12.691h-2.176v1.07c0 .56.182.84.556.84.267 0 .424-.14.486-.44.01-.06.024-.3.024-.74h1.11v.16c0 .35-.013.59-.023.71-.037.24-.122.46-.254.65-.301.44-.748.66-1.316.66-.57 0-1.003-.21-1.318-.62-.23-.3-.349-.78-.349-1.43v-2.12c0-.65.105-1.12.336-1.43.315-.42.748-.62 1.304-.62.546 0 .979.2 1.284.62.227.31.336.78.336 1.43zM14.338 2.23v4.554c-.242.347-.473.516-.691.516-.148 0-.234-.09-.258-.26-.013-.04-.013-.17-.013-.43V2.1h-1.097v.13h-.003v4.85c0 .43.037.72.098.91.109.31.353.45.708.45.401 0 .818-.24 1.256-.75v.67h1.099v-.14h.005V2.1h-1.101v.13zM9.421 19.6h-1.09v-.66c-.432.5-.843.74-1.243.74-.351 0-.593-.14-.702-.45-.059-.18-.095-.47-.095-.9v-4.8h1.087V18c0 .25 0 .39.011.42.026.18.109.26.254.26.219 0 .447-.17.688-.51v-4.64h1.09zM9.224 3.884c.024-.485.195-.724.521-.724.355 0 .526.28.526.85v2.566c-.024.485-.194.724-.522.724-.355 0-.525-.28-.525-.85zm2.769 10.566c-.179 0-.36.08-.542.26v3.7c.182.19.363.27.542.27.314 0 .474-.27.474-.82v-2.58c0-.55-.16-.83-.474-.83zm4.039 0c-.364 0-.546.28-.546.84v.56h1.088v-.56c0-.56-.182-.84-.542-.84z"
+          fill="#fff" />
+    </symbol>
+    <symbol id="icong-g+" viewbox="0 0 19 18">
+      <title>icon</title>
+      <path d="M6.761 0h4.727l-1.46.85h-1.46c.511.33.908.78 1.189 1.37.282.58.422 1.19.422 1.83 0 .53-.083 1-.249 1.42-.166.41-.367.75-.605 1s-.476.48-.714.7c-.238.21-.44.43-.606.66-.166.22-.249.47-.249.73 0 .18.059.37.179.55.119.18.273.35.465.52.191.16.402.34.632.52.231.18.462.38.693.6.231.22.441.45.633.71.191.26.346.56.465.92.119.36.178.74.178 1.15 0 1.16-.505 2.17-1.514 3.05C8.391 17.53 6.876 18 4.944 18c-.426 0-.857-.04-1.293-.11a6.628 6.628 0 0 1-1.32-.36 4.963 4.963 0 0 1-1.174-.63 2.96 2.96 0 0 1-.832-.96A2.657 2.657 0 0 1 0 14.63c0-.44.134-.93.4-1.47.231-.46.577-.86 1.039-1.19.461-.34.984-.59 1.568-.77.585-.18 1.143-.3 1.677-.39.534-.08 1.075-.13 1.622-.14-.461-.6-.692-1.14-.692-1.62a1.508 1.508 0 0 1 .076-.46c.022-.06.05-.14.086-.23.037-.1.062-.18.076-.24-.288.04-.541.06-.757.06-1.074 0-1.996-.36-2.764-1.06-.768-.71-1.152-1.6-1.152-2.66 0-1.01.343-1.92 1.028-2.71C2.892.95 3.736.44 4.738.22A9.33 9.33 0 0 1 6.761 0zm2.715 14.46c0-.15-.016-.29-.049-.44a4.423 4.423 0 0 0-.102-.38 1.376 1.376 0 0 0-.19-.38l-.227-.33a2.514 2.514 0 0 0-.286-.32c-.13-.12-.229-.21-.298-.27a5.378 5.378 0 0 0-.346-.28c-.163-.12-.274-.2-.336-.25-.061-.04-.18-.12-.356-.25-.177-.12-.287-.19-.331-.22a3.604 3.604 0 0 0-.54-.03c-.39 0-.772.03-1.147.08s-.764.14-1.168.27c-.404.13-.757.3-1.06.5-.303.2-.552.47-.747.81-.194.34-.292.72-.292 1.16 0 .49.128.93.384 1.31.256.39.592.69 1.006.91.415.22.85.38 1.304.49.454.11.912.17 1.374.17.425 0 .831-.05 1.217-.14a4.14 4.14 0 0 0 1.087-.42c.339-.19.607-.46.806-.8.198-.34.297-.73.297-1.19zM8.178 5.14c0-.43-.06-.89-.178-1.38a6.919 6.919 0 0 0-.509-1.41c-.22-.46-.523-.83-.909-1.13A2.1 2.1 0 0 0 5.29.78c-.671 0-1.19.25-1.558.75-.368.49-.552 1.09-.552 1.78 0 .34.042.7.125 1.07a5.586 5.586 0 0 0 .99 2.14c.23.3.512.54.843.73.332.19.682.28 1.05.28.699 0 1.206-.22 1.52-.66.313-.43.47-1.01.47-1.73zM16 3V0h-1v3h-3v1h3v3h1V4h3V3z"
+          fill="#fff" />
+    </symbol>
+  </svg>
+
+  <!-- svg-спрайт ends -->
+
+
+  <header class="page-header">
+    <h1 class="logo"><i class="sprite sprite-logo"></i>glow</h1>
+    <div class="download-block">
+      <a href="#" class="download-item">apple
+
+        <svg width="25px" height="25px">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-apple"></use>
+        </svg>
+
+      </a>
+      <a href="#" class="download-item">android
+
+        <svg width="25px" height="25px">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-android"></use>
+        </svg>
+
+      </a>
+      <a href="#" class="download-item">windows
+
+        <svg width="25px" height="25px">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-windows"></use>
+        </svg>
+
+      </a>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="features">
+      <div class="features__wrapper">
+        <div class="features__column features__column--one">
+          <h4>first great feature</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum velit vitae nulla molestie eu. </p>
+          <h4>second great feature</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum velit vitae nulla molestie eu. </p>
+        </div>
+        <div class="features__img"><img src="img/your-screen-here.png" width="308" height="534" alt="your screen here"></div>
+        <div class="features__column features__column--two">
+          <h4>third great feature</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum velit vitae nulla molestie eu. </p>
+          <h4>fourth great feature</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum velit vitae nulla molestie eu. </p>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="about__wrapper">
+        <div class="about__text-column">
+          <h3 class="section-header section-header--about">Whats Glow all About?</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla nisl congue congue. Maecenas nec condimentum libero, at elementum mauris.
+          </p>
+          <p>Phasellus eget nisi dapibus, ultricies nisl at, hendrerit risusuis ornare luctus id sollicitudin ante lobortis at.</p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet consectetur elt</li>
+          </ul>
+        </div>
+        <div class="about__video-wrapper">
+          <iframe src="https://player.vimeo.com/video/10011529" width="500" height="307" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    <section class="advantages">
+      <div class="advantages__wrapper">
+        <h3 class="section-header">why <span>is</span> glow <span>so</span> awesome!</h3>
+        <p class="advantages__text">Lorem ipsum dolor sit amet, pro aeterno adipisci ex, pro no iriure accusam. Eros admodum intellegat ex mea, mei wisi nullam ne, qui cu aliquid nominavi. Est habemus maiestatis ut. Vim quod elitr interesset ea.</p>
+        <div class="advantages__list">
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-flat"></i>
+            <h4>flat design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-marketable"></i>
+            <h4>marketable</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-photos"></i>
+            <h4>edit photos</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-colors"></i>
+            <h4>edit colors</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-friendly"></i>
+            <h4>user friendly</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+          <div class="advantages__item">
+            <i class="sprite sprite-icon-editable"></i>
+            <h4>100% Editable</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="price">
+      <div class="price__wrapper">
+        <h3 class="section-header">pricing plans</h3>
+        <p class="price__text">Lorem ipsum dolor sit amet, pro aeterno adipisci ex, pro no iriure accusam. Eros admodum intellegat ex mea, mei wisi nullam ne, qui cu aliquid nominavi. Est habemus maiestatis ut. Vim quod elitr interesset ea.</p>
+        <div class="price__table">
+          <div class="price__item">
+            <h4 class="price__item-header">basic</h4>
+            <div class="price__value">$19<span>99</span></div>
+            <ul>
+              <li>feature 1</li>
+              <li>feature 2</li>
+              <li>feature 3</li>
+              <li>feature 4</li>
+              <li>feature 5</li>
+            </ul>
+            <div class="price__link-wrapper"><a href="#" class="price__link">purchase</a></div>
+          </div>
+          <div class="price__item">
+            <h4 class="price__item-header">standard</h4>
+            <div class="price__value">$39<span>99</span></div>
+            <ul>
+              <li>feature 1</li>
+              <li>feature 2</li>
+              <li>feature 3</li>
+              <li>feature 4</li>
+              <li>feature 5</li>
+            </ul>
+            <div class="price__link-wrapper"><a href="#" class="price__link">purchase</a></div>
+          </div>
+          <div class="price__item">
+            <h4 class="price__item-header price__item-header--promo">deluxe</h4>
+            <div class="price__value">$59<span>99</span></div>
+            <ul>
+              <li>feature 1</li>
+              <li>feature 2</li>
+              <li>feature 3</li>
+              <li>feature 4</li>
+              <li>feature 5</li>
+              <li>feature 6</li>
+            </ul>
+            <div class="price__link-wrapper price__link-wrapper--promo"><a href="#" class="price__link price__link--promo">purchase</a></div>
+          </div>
+          <div class="price__item">
+            <h4 class="price__item-header">unlimited</h4>
+            <div class="price__value">$79<span>99</span></div>
+            <ul>
+              <li>feature 1</li>
+              <li>feature 2</li>
+              <li>feature 3</li>
+              <li>feature 4</li>
+              <li>feature 5</li>
+            </ul>
+            <div class="price__link-wrapper"><a href="#" class="price__link">purchase</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
