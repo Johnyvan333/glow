@@ -3,8 +3,7 @@ html {
   padding: 0;
 }
 body {
-  min-width: 1080px;
-  max-width: 1600px;
+  min-width: 1200px;
   margin: 0 auto;
   padding: 0;
   font-size: 16px;
@@ -16,6 +15,7 @@ p {
 * {
   box-sizing: border-box;
 }
+// блок фич
 .features {
   margin: 0 auto;
   padding-top: 48px;
@@ -77,6 +77,7 @@ p {
     text-transform: lowercase;
   }
 }
+// блок видео
 .about {
   @include clearfix;
   background: #e8e8e8;
@@ -121,8 +122,12 @@ p {
     padding-top: 10px;
     width: 500px;
     height: 307px;
+    & iframe {
+      border: none;
+    }
   }
 }
+// блок преимуществ
 .advantages {
   padding-top: 50px;
   padding-bottom: 60px;
@@ -180,8 +185,9 @@ p {
     }
   }
 }
+// блок тарифов
 .price {
-  height: 580px;
+  height: 600px;
   padding-top: 50px;
   background: #e8e8e8;
   &__text {
@@ -250,6 +256,8 @@ p {
     }
   }
   &__link {
+    position: relative;
+    z-index: 10;
     display: inline-block;
     width: 137px;
     height: 40px;
@@ -261,8 +269,209 @@ p {
     text-transform: uppercase;
     font-weight: bold;
     background: #514d4d;
+    cursor: pointer;
+    &:hover {
+      background: darken(#514d4d, 5%);
+    }
+    &:active {
+      opacity: 0.8;
+    }
     &--promo {
       background: #f27a6d;
+      &:hover {
+        background: darken(#f27a6d, 5%);
+      }
+    }
+  }
+}
+// блок отзывов
+.reviews {
+  padding-top: 131px;
+  & input {
+    display: none;
+  }
+  &__content {
+    position: relative;
+    width: 800px;
+    padding-bottom: 50px;
+    margin: 0 auto 60px;
+  }
+}
+.review-item {
+  font-size: 0;
+  width: 100%;
+  display: block;
+  &__text {
+    display: block;
+    margin-bottom: 15px;
+    color: #848484;
+    text-align: center;
+    font-style: italic;
+    font-size: 24px;
+    line-height: em(32, 24);
+  }
+  &__author {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: em(24, 16);
+    text-align: center;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #e74c3c;
+    cursor: pointer;
+  }
+  &--1 {
+    &::after {
+      transform: translateX(-30px);
+    }
+  }
+  &--3 {
+    &::after {
+      transform: translateX(15px);
+    }
+  }
+}
+#review1:checked ~ .reviews__content .review-item--1::after {
+  background: #e74c3c;
+}
+#review2:checked ~ .reviews__content .review-item--2::after {
+  background: #e74c3c;
+}
+#review3:checked ~ .reviews__content .review-item--3::after {
+  background: #e74c3c;
+}
+#review1:checked ~ .reviews__content .review-item--1 span {
+  display: block;
+}
+#review1:checked ~ .reviews__content .review-item--2 span,
+#review1:checked ~ .reviews__content .review-item--3 span {
+  display: none;
+}
+#review2:checked ~ .reviews__content .review-item--2 span {
+  display: block;
+}
+#review2:checked ~ .reviews__content .review-item--1 span,
+#review2:checked ~ .reviews__content .review-item--3 span {
+  display: none;
+}
+#review3:checked ~ .reviews__content .review-item--3 span {
+  display: block;
+}
+#review3:checked ~ .reviews__content .review-item--1 span,
+#review3:checked ~ .reviews__content .review-item--2 span {
+  display: none;
+}
+// блок подписки
+.subscribe {
+  padding: 50px 0;
+  background: url('../img/down-bg.jpg') top center no-repeat;
+}
+.subscribe-form {
+  font-size: 0;
+  margin: 25px auto 0;
+  padding: 0;
+  text-align: center;
+  & input {
+    display: inline-block;
+    vertical-align: top;
+    width: 374px;
+    height: 73px;
+    color: white;
+    padding: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 73px;
+    background: rgba(0, 0, 0, 0.65);
+    border: none;
+    outline: none;
+  }
+  & button {
+    display: inline-block;
+    vertical-align: top;
+    width: 149px;
+    height: 73px;
+    margin-left: 9px;
+    line-height: 73px;
+    background: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background: darken(#e74c3c, 10%);
+    }
+  }
+}
+// блок социальных ссылок
+.social {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  &__text {
+    max-width: 1200px;
+    margin: 0 auto 15px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #848484;
+    line-height: em(26, 16);
+  }
+}
+.social-content {
+  text-align: center;
+}
+.social-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 34px;
+  height: 34px;
+  padding-top: 5px;
+  border-radius: 50%;
+  background: #c5c5c5;
+  text-align: center;
+  & svg {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  &:hover {
+    background: #e74c3c;
+  }
+  &:active {
+    background: darken(#e74c3c, 10%);
+  }
+  &--twitter {
+    padding: 0;
+    background: white;
+    & svg {
+      fill: #c5c5c5;
+    }
+    &:hover {
+      background: white;
+      & svg {
+        fill: #e74c3c;
+      }
+    }
+    &:active {
+      background: white;
+      & svg {
+        fill: darken(#e74c3c, 10%);
+      }
     }
   }
 }
